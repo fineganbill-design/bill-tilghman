@@ -40,11 +40,18 @@ async def chat(request: Request):
     if not message:
         return JSONResponse({"error": "Message is required."}, status_code=400)
 
+   try:
+
     result = await Runner.run(bill, message, session=session)
+
     return {"reply": result.final_output}
+
 except Exception as exc:
+
     import traceback
+
     traceback.print_exc()
-    return JSONResponse({"error": str(exc)}, status_code=500)
+
+    
 
 
