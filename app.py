@@ -42,4 +42,9 @@ async def chat(request: Request):
 
     result = await Runner.run(bill, message, session=session)
     return {"reply": result.final_output}
+except Exception as exc:
+    import traceback
+    traceback.print_exc()
+    return JSONResponse({"error": str(exc)}, status_code=500)
+
 
