@@ -51,7 +51,7 @@ except Exception as exc:
     import traceback
 
     traceback.print_exc()
-
+return JSONResponse({"error": str(exc)}, status_code=500)
     
 
 
