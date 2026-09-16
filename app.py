@@ -17,6 +17,7 @@ app.mount("/static", StaticFiles(directory=str(BASE / "static")), name="static")
 bill = Agent(
     name="Bill Tilghman",
     instructions=INSTRUCTIONS,
+    tools=[WebSearchTool()],
 )
 
 # Version 1 intentionally has no financial, email, wallet, or marketplace tools.
