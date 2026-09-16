@@ -3,7 +3,7 @@ from pathlib import Path
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
-from agents import Agent, Runner, SQLiteSession
+from agents import Agent, Runner, SQLiteSession, WebSearchTool
 
 BASE = Path(__file__).resolve().parent
 DB_PATH = str(BASE / "data" / "conversations.db")
